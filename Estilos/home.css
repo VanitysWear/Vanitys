@@ -17,3 +17,31 @@ header{
     text-align: center;
     background-color: rgba(0, 0, 0, 0.288);
 }
+
+.conteiner-roupas1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#roupa{
+    margin: 10px;
+}
+
+#roupa1, #roupa2, #roupa3, #roupa4{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.288);
+    width: 200px;
+    flex-direction: column;
+    height: 400px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s;
+}
+
+#roupa1:hover, #roupa2:hover, #roupa3:hover, #roupa4:hover{
+    transform: scale(1.05)
+}
