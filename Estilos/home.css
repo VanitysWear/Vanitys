@@ -7,7 +7,7 @@
 
 
 body{
-    font-family:    monospace;
+    font-family: sans-serif;
 }
 
 header{
@@ -15,13 +15,63 @@ header{
     height: 250px;
     padding-top: 150px ;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.288);
+    background-color: rgba(2, 1, 1, 0.288);
 }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 65px;
+    background: rgba(255, 255, 255, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    box-sizing: border-box;
+    transition: background 0.3s;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: rgb(7, 7, 7); 
+}
+
+.navbar.scrolled .navbar-menu li a {
+    color: #fff;
+}
+
+.navbar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.navbar-menu li a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.5s, transform 0.3s;
+}
+
+.navbar-menu li a:hover {
+    color: #fff;
+    transform: scale(1.15); /* aumenta mais ao passar o mouse */
+}
+
+/*final do Nav*/
 
 .conteiner-roupas1{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around ;
     align-items: center;
     margin: 20px;
 }
@@ -33,9 +83,9 @@ header{
 #roupa1, #roupa2, #roupa3, #roupa4{
     display: flex;
     background-color: rgba(0, 0, 0, 0.288);
-    width: 200px;
+    width: 150px;
     flex-direction: column;
-    height: 400px;
+    height: 200px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -45,3 +95,4 @@ header{
 #roupa1:hover, #roupa2:hover, #roupa3:hover, #roupa4:hover{
     transform: scale(1.05)
 }
+
