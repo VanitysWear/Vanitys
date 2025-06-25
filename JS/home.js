@@ -1,16 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.querySelector('.navbar'); // Seleciona a navbar
-    const header = document.querySelector('header');  // Seleciona o header
+    const navbar = document.querySelector('.navbar')
+    const header = document.querySelector('header')
 
     function onScroll() {
-        const headerHeight = header.offsetHeight; // Pega a altura do header
-        // Se a rolagem passou da altura do header
+        const headerHeight = header.offsetHeight;
         if (window.scrollY > headerHeight) {
-            navbar.classList.add('scrolled'); // Adiciona a classe preta
+            navbar.classList.add('scrolled'); 
         } else {
-            navbar.classList.remove('scrolled'); // Remove, volta a transparente
+            navbar.classList.remove('scrolled')
         }
     }
 
-    window.addEventListener('scroll', onScroll); // Executa ao rolar a página
+    window.addEventListener('scroll', onScroll)
+
+    // Menu hambúrguer mobile
+    const botaoMenu = document.querySelector('.menu-hamburguer');
+    const menuMobile = document.querySelector('.menu-mobile');
+
+    botaoMenu.addEventListener('click', function() {
+        menuMobile.classList.toggle('ativo');
+    });
 });
+

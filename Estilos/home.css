@@ -1,5 +1,7 @@
 @charset "UTF-8";   
 
+
+
 *{
     padding: 0;
     margin: 0;
@@ -8,13 +10,14 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
 }
 
 header{
     height: 250px;
     padding-top: 150px ;
     text-align: center;
-   background-color: #a2a2a2;
+    background-color: #a2a2a2;
     
 }
 
@@ -69,37 +72,87 @@ header{
 
 .conteiner-roupas1{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around ;
     align-items: center;
     margin: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-#roupa{
-    margin: 10px;
-}
-
-#roupa1, #roupa2, #roupa3, #roupa4{
+.roupa {
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 8px #0002;
+    align-items: center;
+    overflow: hidden;
     display: flex;
-    background-color: #a2a2a2;
-    width: 150px;
     flex-direction: column;
-    height: 200px;
+    align-items: center;
+    justify-content: flex-end;
+    border: 1px solid rgba(0, 0, 0, 0.541);
+}
+
+.roupa p{
+    color:black;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.roupa img {
+    border: 1px solid red;
+    border-radius: 1px;
+}
+
+.roupa:hover{
+    transform: scale(1.05)
+}
+
+
+
+.roupa p{
+    font-size: 15px;
+    margin: 10px 0px;
+}
+
+.roupa button{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
     margin: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    min-height: 40px;           
+    will-change: transform;     /* Otimiza animação */
+    transition: background-color 0.3s;
+    font-size: 15px;
+}
+
+.roupa button:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    transform: scale(1.1);
+    transition: 0.5s;
+    border: 1px solid black;
+}
+
+.roupa{
+    margin: 5px;
+    width: 200px;
+    flex-direction: column;
+    height: 300px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.4s;
 }
 
-#roupa1:hover, #roupa2:hover, #roupa3:hover, #roupa4:hover{
-    transform: scale(1.05)
-}
+
 
 .promocao{
     margin: 20px 0px;
     text-align: center;
     background-color: #a2a2a2;
-    color:white;
+    color: white;
     padding: 50px 10px 0px 10px;
     height: 250px;
     
@@ -132,37 +185,93 @@ header{
     color: black;
     transform: scale(1.1);
     transition: 0.5s;
+    border: 1px solid black;
 }
 
-.conteiner-slide{
-    max-width:250px;    
-    max-height: 550px;
-    border: 1px solid #a2a2a2;
-    margin: auto;
-}
 
-.card{
-    display: grid;
-    grid-auto-flow: column;
-    gap: 10px;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
-}
-
-.card li{
-    border-radius: 20px;
-    list-style: none;
-    padding: 10px;
-    width: 200px;
-    height: 130px;
+  
+footer{
     background-color: #a2a2a2;
-    scroll-snap-align: center ;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.conteiner-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer li{
+    list-style: none;
     
 }
 
-.arrastando {
-    cursor: grabbing;
-    user-select: none;
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1101;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    background: #222;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Menu mobile oculto por padrão */
+.menu-mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -50vw; /* Esconde o menu para a esquerda */
+    width: 50vw;
+    height: 100vh;
+    background: #222;
+    color: #fff;
+    z-index: 1100;
+    padding-top: 80px;
+    transition: left 0.3s;
+}
+
+.menu-mobile.ativo {
+    left: 0; /* Mostra o menu */
+}
+
+.menu-mobile ul {
+    list-style: none;
+    padding: 0 24px;
+}
+
+.menu-mobile li {
+    margin: 24px 0;
+}
+
+.menu-mobile a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+/* Responsivo: mostra o hambúrguer e esconde o menu normal */
+@media (max-width: 800px) {
+    .navbar-menu {
+        display: none;
+    }
+    .menu-hamburguer {
+        display: flex;
+    }
 }
