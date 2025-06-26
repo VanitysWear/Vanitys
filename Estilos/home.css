@@ -98,11 +98,6 @@ header{
     
 }
 
-.roupa img {
-    border: 1px solid red;
-    border-radius: 1px;
-}
-
 .roupa:hover{
     transform: scale(1.05)
 }
