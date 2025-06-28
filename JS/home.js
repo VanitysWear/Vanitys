@@ -1,17 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar')
     const header = document.querySelector('header')
+    const hamburguer = document.querySelector('.menu-hamburguer');
 
     function onScroll() {
         const headerHeight = header.offsetHeight;
         if (window.scrollY > headerHeight) {
             navbar.classList.add('scrolled'); 
         } else {
-            navbar.classList.remove('scrolled')
+            navbar.classList.remove('scrolled');
         }
     }
 
     window.addEventListener('scroll', onScroll)
+
+
 
     // Menu hambúrguer mobile
     const botaoMenu = document.querySelector('.menu-hamburguer');
